@@ -21,15 +21,16 @@ int main(){
 
 
     int arr[n][m];
-    int kalantar;
-    scanf("%d",&kalantar);
-    int kalantari[kalantar];
+    int kalantari;
+    scanf("%d",&kalantari);
+    int kalantar[kalantari];
     int counter;
     int xpolis[1000],ypolis[1000];
-    for(counter=0;counter<kalantar;counter++){
+    for(counter=0;counter<kalantari;counter++){
         printf("tedad polis kalantari %d :",counter+1);
-        scanf("%d",kalantari[counter]);
+        scanf("%d",&kalantar[counter]);
     }
+    return 0;
 
 
 }
