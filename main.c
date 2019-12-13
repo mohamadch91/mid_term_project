@@ -38,7 +38,7 @@ int chap(int n, int m, int arr[n][m]) {
     return 0;
 }
 
-/*int makan(int kalantari,int kalantar[kalantari],int n, int m, int *arr[n][m]){
+/*int makan(int kalantari,int kalantar[kalantari],int n, int m, int arr){
     int x, y;
     int counter1;
     int kolp = 0;
@@ -58,6 +58,20 @@ int chap(int n, int m, int arr[n][m]) {
             }
 }
         return *arr[n][m];*/
+int chek1(int xt,int n) {
+    while (xt >= n) {
+//            printf("xhi");
+        xt -= 1;
+//            yt -=1;
+    }
+
+    while (xt < 0) {
+//            printf("xhi");
+        xt += 1;
+//            yt -=1;
+    }
+   return xt;
+}
 int chek(int m, int n) {
     if (n == 0) {
         return m;
@@ -70,8 +84,12 @@ int chek(int m, int n) {
     }
 
 }
-
+//int did(m,n) {
+//
+//
+//}
 int main() {
+    int didx,didy;
     srand(time(0));
     int n, m;
     scanf("%d %d", &n, &m);
@@ -113,6 +131,9 @@ int main() {
     for (counter = 0; counter < kalantari; counter++) {
         for (counter1 = 0; counter1 < kalantar[counter]; counter1++) {
 //            sleep(1);
+//            didx=xpolis[kolp]-xt;
+//            didy=ypolis[kolp-yt];
+
             xpolis[kolp] = rand() % n;
             ypolis[kolp] = rand() % m;
             x = xpolis[kolp];
@@ -153,26 +174,28 @@ int main() {
         arr[xt][yt] = 0;
         xt = chek(xt, xt1);
         yt = chek(yt, yt1);
-        while (xt >= n) {
-//            printf("xhi");
-            xt -= 1;
-//            yt -=1;
-        }
-        while (yt >= m) {
-//            printf("xhi");
-//            xt-=1;
-            yt -= 1;
-        }
-        while (xt < 0) {
-//            printf("xhi");
-            xt += 1;
-//            yt -=1;
-        }
-        while (yt < 0) {
-//            printf("xhi");
-//            xt+=1;
-            yt += 1;
-        }
+        xt=chek1(xt,n);
+        yt=chek1(yt,m);
+//        while (xt >= n) {
+////            printf("xhi");
+//            xt -= 1;
+////            yt -=1;
+//        }
+//        while (yt >= m) {
+////            printf("xhi");
+////            xt-=1;
+//            yt -= 1;
+//        }
+//        while (xt < 0) {
+////            printf("xhi");
+//            xt += 1;
+////            yt -=1;
+//        }
+//        while (yt < 0) {
+////            printf("xhi");
+////            xt+=1;
+//            yt += 1;
+//        }
         if (arr[xt][yt] != 0) {
             chap(n, m, arr);
 //            printf("yhi");
@@ -186,7 +209,7 @@ int main() {
         arr[xt][yt] = -1;
         kolp = 0;
 
-//        else {
+//
         for (counter = 0; counter < kalantari; counter++) {
             for (counter1 = 0; counter1 < kalantar[counter]; counter1++) {
 //               sleep(1);
@@ -197,22 +220,24 @@ int main() {
                 arr[xpolis[kolp]][ypolis[kolp]] = 0;
                 xpolis[kolp] = chek(xpolis[kolp], xpolis1);
                 ypolis[kolp] = chek(ypolis[kolp], ypolis1);
-                while (xpolis[kolp] >= n) {
-                    xpolis[kolp] -= 1;
-//                    ypolis[kolp] -=1;
-                }
-                while (ypolis[kolp] >= m) {
-//                    xpolis[kolp] -=1;
-                    ypolis[kolp] -= 1;
-                }
-                while (xpolis[kolp] < 0) {
-                    xpolis[kolp] += 1;
-//                    ypolis[kolp] +=1;
-                }
-                while (ypolis[kolp] < 0) {
-//                    xpolis[kolp] +=1;
-                    ypolis[kolp] += 1;
-                }
+                xpolis[kolp]=chek1(xpolis[kolp],n);
+                ypolis[kolp]=chek1(ypolis[kolp],m);
+//                while (xpolis[kolp] >= n) {
+//                    xpolis[kolp] -= 1;
+////                    ypolis[kolp] -=1;
+//                }
+//                while (ypolis[kolp] >= m) {
+////                    xpolis[kolp] -=1;
+//                    ypolis[kolp] -= 1;
+//                }
+//                while (xpolis[kolp] < 0) {
+//                    xpolis[kolp] += 1;
+////                    ypolis[kolp] +=1;
+//                }
+//                while (ypolis[kolp] < 0) {
+////                    xpolis[kolp] +=1;
+//                    ypolis[kolp] += 1;
+//                }
                 x = xpolis[kolp];
                 y = ypolis[kolp];
 //                printf("%d %d sara1\n",x,y);
@@ -220,17 +245,36 @@ int main() {
 //                    chap(n, m, arr);
 //                    return 0;
 //                }
-                while (arr[x][y] != 0) {
+                while (arr[x][y] >0) {
 //                    sleep(1);
                     xpolis1 = rand() % 3;
                     ypolis1 = rand() % 3;
                     xpolis[kolp] = chek(xpolis[kolp], xpolis1);
                     ypolis[kolp] = chek(ypolis[kolp], ypolis1);
+                    xpolis[kolp]=chek1(xpolis[kolp],n);
+                    ypolis[kolp]=chek1(ypolis[kolp],m);
+//                    while (xpolis[kolp] >= n) {/*
+//                        xpolis[kolp] -= 1;
+////                    ypolis[kolp] -=1;
+//                    }
+//                    while (ypolis[kolp] >= m) {
+////                    xpolis[kolp] -=1;
+//                        ypolis[kolp] -= 1;
+//                    }
+//                    while (xpolis[kolp] < 0) {
+//                        xpolis[kolp] += 1;
+////                    ypolis[kolp] +=1;
+//                    }
+//                    while (ypolis[kolp] < 0) {
+////                    xpolis[kolp] +=1;
+//                        ypolis[kolp] += 1;
+//                    }*/
                     x = xpolis[kolp];
                     y = ypolis[kolp];
 //                    printf("%d %d sara2\n",x,y);
                 }
                 if (arr[x][y] == -1) {
+                    arr[x][y] = -2;
                     chap(n, m, arr);
                     return 0;
                 }
