@@ -86,142 +86,137 @@ int chek(int m, int n) {
 
 }
 
-int did(int m, int n, int xt, int yt) {
-    double fasele;
-    fasele = pow((pow((xt - m), 2), pow((yt - n), 2)), 0.5);
-    if (fasele == 1) {
-        if ((xt - m) == 0) {
-            n += (yt - n);
+//int did(int m, int n, int xt, int yt) {
+//    double fasele;
+//    fasele = pow((pow((xt - m), 2), pow((yt - n), 2)), 0.5);
+//    if (fasele == 1) {
+//        if ((xt - m) == 0) {
+//            n += (yt - n);
+//
+//        }
+//        if ((yt - n) == 0) {
+//            m += (xt - m);
+//        }
+//
+//    } else if (fasele == 2) {
+//        if ((xt - m) == 0) {
+//            n > yt ? (n--) : (n++);
+//
+//        }
+//        if ((yt - n) == 0) {
+//            m > xt ? (m--) : (m++);
+//        }
+//
+//    } else if (fasele == sqrt(5)) {
+//        if (yt < n) {
+//            if (xt < m) {
+//                n--;
+//                m--;
+//            } else {
+//                m++;
+//                n--;
+//            }
+//
+//        } else {
+//            if (xt < n) {
+//                n++;
+//                m--;
+//
+//            } else {
+//                n++;
+//                m++;
+//            }
+//
+//        }
+//
+//
+//    } else if (fasele == sqrt(8)) {
+//        if (xt > m && yt > n) {
+//            m++;
+//            n++;
+//        }
+//        if (xt > m && yt < n) {
+//            m++;
+//            n--;
+//        }
+//        if (xt < m && yt < n) {
+//            m--;
+//            n--;
+//        }
+//        if (xt < m && yt > n) {
+//            n++;
+//            m--;
+//        }
+//
+//    }
+//    return m;
+//}
+//int did1(int m, int n, int xt, int yt) {
+//    double fasele;
+//    fasele = pow((pow((xt - m), 2), pow((yt - n), 2)), 0.5);
+//    if (fasele == 1) {
+//        if ((xt - m) == 0) {
+//            n += (yt - n);
+//
+//        }
+//        if ((yt - n) == 0) {
+//            m += (xt - m);
+//        }
+//
+//    } else if (fasele == 2) {
+//        if ((xt - m) == 0) {
+//            n > yt ? (n--) : (n++);
+//
+//        }
+//        if ((yt - n) == 0) {
+//            m > xt ? (m--) : (m++);
+//        }
+//
+//    } else if (fasele == sqrt(5)) {
+//        if (yt < n) {
+//            if (xt < m) {
+//                n--;
+//                m--;
+//            } else {
+//                m++;
+//                n--;
+//            }
+//
+//        } else {
+//            if (xt < n) {
+//                n++;
+//                m--;
+//
+//            } else {
+//                n++;
+//                m++;
+//            }
+//
+//        }
+//
+//
+//    } else if (fasele == sqrt(8)) {
+//        if (xt > m && yt > n) {
+//            m++;
+//            n++;
+//        }
+//        if (xt > m && yt < n) {
+//            m++;
+//            n--;
+//        }
+//        if (xt < m && yt < n) {
+//            m--;
+//            n--;
+//        }
+//        if (xt < m && yt > n) {
+//            n++;
+//            m--;
+//        }
+//
+//    }
+//    return n;
+//}
 
-        }
-        if ((yt - n) == 0) {
-            m += (xt - m);
-        }
-
-    } else if (fasele == 2) {
-            if ((xt - m) == 0) {
-                n > yt ? (n--) : (n++);
-
-            }
-            if ((yt - n) == 0) {
-                m > xt ? (m--) : (m++);
-            }
-
-    } else if (fasele == sqrt(5)) {
-        if(yt<n){
-                if(xt<m){
-                    n--;
-                    m--;
-                }
-                else{
-                    m++;
-                    n--;
-                }
-
-        }
-        else{
-                 if(xt<n){
-                        n++;
-                        m--;
-
-                }
-                else{
-                    n++;
-                    m++;
-                }
-
-        }
-
-
-    } else if (fasele == sqrt(8)) {
-        if(xt>m&&yt>n){
-            m++;
-            n++;
-        }
-        if(xt>m&&yt<n){
-            m++;
-            n--;
-        }
-        if(xt<m&&yt<n){
-            m--;
-            n--;
-        }
-        if(xt<m&&yt>n){
-            n++;
-            m--;
-        }
-
-    }
-    return m;
-}
-int did1(int m, int n, int xt, int yt) {
-    double fasele;
-    fasele = pow((pow((xt - m), 2), pow((yt - n), 2)), 0.5);
-    if (fasele == 1) {
-        if ((xt - m) == 0) {
-            n += (yt - n);
-
-        }
-        if ((yt - n) == 0) {
-            m += (xt - m);
-        }
-
-    } else if (fasele == 2) {
-            if ((xt - m) == 0) {
-                n > yt ? (n--) : (n++);
-
-            }
-            if ((yt - n) == 0) {
-                m > xt ? (m--) : (m++);
-            }
-
-    } else if (fasele == sqrt(5)) {
-        if(yt<n){
-                if(xt<m){
-                    n--;
-                    m--;
-                }
-                else{
-                    m++;
-                    n--;
-                }
-
-        }
-        else{
-                 if(xt<n){
-                        n++;
-                        m--;
-
-                }
-                else{
-                    n++;
-                    m++;
-                }
-
-        }
-
-
-    } else if (fasele == sqrt(8)) {
-        if(xt>m&&yt>n){
-            m++;
-            n++;
-        }
-        if(xt>m&&yt<n){
-            m++;
-            n--;
-        }
-        if(xt<m&&yt<n){
-            m--;
-            n--;
-        }
-        if(xt<m&&yt>n){
-            n++;
-            m--;
-        }
-
-    }
-    return n;
-}
 int main() {
     int didx, didy;
     srand(time(0));
@@ -348,18 +343,42 @@ int main() {
         for (counter = 0; counter < kalantari; counter++) {
             for (counter1 = 0; counter1 < kalantar[counter]; counter1++) {
 //               sleep(1);
-                if((xpolis[kolp]-xt)<=2&&ypolis[kolp]-yt)<=2||){
-                }
-                else{
-                xpolis1 = rand() % 3;
-                ypolis1 = rand() % 3;
+
+                if (abs(xpolis[kolp] - xt) <= 2 && abs(ypolis[kolp] - yt) <= 2) {
+                    sherif[counter] = 1;
+//                        xpolis[kolp]=did(xpolis[kolp],ypolis[kolp],xt,yt);
+//                        ypolis[kolp]=did1(xpolis[kolp],ypolis[kolp],xt,yt);
+
+                } else {
+                    if (sherif[counter] == 1) {
+                        arr[xpolis[kolp]][ypolis[kolp]] = 0;
+                        xpolis1 = xpolis[kolp] - xt;
+                        ypolis1 = ypolis[kolp] - yt;
+                        if (xpolis1 > 0) {
+                            xpolis1--;
+                        } else if (xpolis1 < 0) {
+                            xpolis1++;
+
+                        }
+                        xpolis[kolp] = xt - xpolis1;
+                        if (ypolis1 > 0) {
+                            ypolis1--;
+                        } else if (ypolis1 < 0) {
+                            ypolis1++;
+
+                        }
+                        ypolis[kolp] = yt - ypolis1;
+                    }
+                    else {
+                        xpolis1 = rand() % 3;
+                        ypolis1 = rand() % 3;
 //                printf("%d %d sara0\n",x,y);
 
-                arr[xpolis[kolp]][ypolis[kolp]] = 0;
-                xpolis[kolp] = chek(xpolis[kolp], xpolis1);
-                ypolis[kolp] = chek(ypolis[kolp], ypolis1);
-                xpolis[kolp] = chek1(xpolis[kolp], n);
-                ypolis[kolp] = chek1(ypolis[kolp], m);
+                        arr[xpolis[kolp]][ypolis[kolp]] = 0;
+                        xpolis[kolp] = chek(xpolis[kolp], xpolis1);
+                        ypolis[kolp] = chek(ypolis[kolp], ypolis1);
+                        xpolis[kolp] = chek1(xpolis[kolp], n);
+                        ypolis[kolp] = chek1(ypolis[kolp], m);
 //                while (xpolis[kolp] >= n) {
 //                    xpolis[kolp] -= 1;
 ////                    ypolis[kolp] -=1;
@@ -376,21 +395,21 @@ int main() {
 ////                    xpolis[kolp] +=1;
 //                    ypolis[kolp] += 1;
 //                }
-                x = xpolis[kolp];
-                y = ypolis[kolp];
+                        x = xpolis[kolp];
+                        y = ypolis[kolp];
 //                printf("%d %d sara1\n",x,y);
 //                if(arr[x][y]==-1){
 //                    chap(n, m, arr);
 //                    return 0;
 //                }
-                while (arr[x][y] > 0) {
+                        while (arr[x][y] > 0) {
 //                    sleep(1);
-                    xpolis1 = rand() % 3;
-                    ypolis1 = rand() % 3;
-                    xpolis[kolp] = chek(xpolis[kolp], xpolis1);
-                    ypolis[kolp] = chek(ypolis[kolp], ypolis1);
-                    xpolis[kolp] = chek1(xpolis[kolp], n);
-                    ypolis[kolp] = chek1(ypolis[kolp], m);
+                            xpolis1 = rand() % 3;
+                            ypolis1 = rand() % 3;
+                            xpolis[kolp] = chek(xpolis[kolp], xpolis1);
+                            ypolis[kolp] = chek(ypolis[kolp], ypolis1);
+                            xpolis[kolp] = chek1(xpolis[kolp], n);
+                            ypolis[kolp] = chek1(ypolis[kolp], m);
 //                    while (xpolis[kolp] >= n) {/*
 //                        xpolis[kolp] -= 1;
 ////                    ypolis[kolp] -=1;
@@ -407,31 +426,35 @@ int main() {
 ////                    xpolis[kolp] +=1;
 //                        ypolis[kolp] += 1;
 //                    }*/
-                    x = xpolis[kolp];
-                    y = ypolis[kolp];
+                            x = xpolis[kolp];
+                            y = ypolis[kolp];
 //                    printf("%d %d sara2\n",x,y);
-                }
-                if (arr[x][y] == -1) {
-                    arr[x][y] = -2;
-                    chap(n, m, arr);
-                    return 0;
-                }
+                        }
+                        if (arr[x][y] == -1) {
+                            arr[x][y] = -2;
+                            chap(n, m, arr);
+                            return 0;
+                        }
 //                if (x == xt && y == yt) {
 //                    xpolis[kolp] = rand() % n;
 //                    ypolis[kolp] = rand() % m;
 //                    x = xpolis[kolp];
 //                    y = ypolis[kolp];
 //                }
-                arr[x][y] = counter + 1;
+                        arr[x][y] = counter + 1;
+
+                    }
+
+                }
                 kolp++;
             }
-        }
 
 //        _sleep(1);
-        chap(n, m, arr);
-        printf("\n");
-        time1++;
-        printf("time is %d\n", time1);
+            chap(n, m, arr);
+            printf("\n");
+            time1++;
+            printf("time is %d\n", time1);
+        }
     }
 
 
