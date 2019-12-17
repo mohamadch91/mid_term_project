@@ -58,7 +58,7 @@ int chap(int n, int m, int arr[n][m]) {
             }
 }
         return *arr[n][m];*/
-int chek1(int xt,int n) {
+int chek1(int xt, int n) {
     while (xt >= n) {
 //            printf("xhi");
         xt -= 1;
@@ -70,8 +70,9 @@ int chek1(int xt,int n) {
         xt += 1;
 //            yt -=1;
     }
-   return xt;
+    return xt;
 }
+
 int chek(int m, int n) {
     if (n == 0) {
         return m;
@@ -84,12 +85,145 @@ int chek(int m, int n) {
     }
 
 }
-//int did(m,n) {
-//
-//
-//}
+
+int did(int m, int n, int xt, int yt) {
+    double fasele;
+    fasele = pow((pow((xt - m), 2), pow((yt - n), 2)), 0.5);
+    if (fasele == 1) {
+        if ((xt - m) == 0) {
+            n += (yt - n);
+
+        }
+        if ((yt - n) == 0) {
+            m += (xt - m);
+        }
+
+    } else if (fasele == 2) {
+            if ((xt - m) == 0) {
+                n > yt ? (n--) : (n++);
+
+            }
+            if ((yt - n) == 0) {
+                m > xt ? (m--) : (m++);
+            }
+
+    } else if (fasele == sqrt(5)) {
+        if(yt<n){
+                if(xt<m){
+                    n--;
+                    m--;
+                }
+                else{
+                    m++;
+                    n--;
+                }
+
+        }
+        else{
+                 if(xt<n){
+                        n++;
+                        m--;
+
+                }
+                else{
+                    n++;
+                    m++;
+                }
+
+        }
+
+
+    } else if (fasele == sqrt(8)) {
+        if(xt>m&&yt>n){
+            m++;
+            n++;
+        }
+        if(xt>m&&yt<n){
+            m++;
+            n--;
+        }
+        if(xt<m&&yt<n){
+            m--;
+            n--;
+        }
+        if(xt<m&&yt>n){
+            n++;
+            m--;
+        }
+
+    }
+    return m;
+}
+int did1(int m, int n, int xt, int yt) {
+    double fasele;
+    fasele = pow((pow((xt - m), 2), pow((yt - n), 2)), 0.5);
+    if (fasele == 1) {
+        if ((xt - m) == 0) {
+            n += (yt - n);
+
+        }
+        if ((yt - n) == 0) {
+            m += (xt - m);
+        }
+
+    } else if (fasele == 2) {
+            if ((xt - m) == 0) {
+                n > yt ? (n--) : (n++);
+
+            }
+            if ((yt - n) == 0) {
+                m > xt ? (m--) : (m++);
+            }
+
+    } else if (fasele == sqrt(5)) {
+        if(yt<n){
+                if(xt<m){
+                    n--;
+                    m--;
+                }
+                else{
+                    m++;
+                    n--;
+                }
+
+        }
+        else{
+                 if(xt<n){
+                        n++;
+                        m--;
+
+                }
+                else{
+                    n++;
+                    m++;
+                }
+
+        }
+
+
+    } else if (fasele == sqrt(8)) {
+        if(xt>m&&yt>n){
+            m++;
+            n++;
+        }
+        if(xt>m&&yt<n){
+            m++;
+            n--;
+        }
+        if(xt<m&&yt<n){
+            m--;
+            n--;
+        }
+        if(xt<m&&yt>n){
+            n++;
+            m--;
+        }
+
+    }
+    return n;
+}
 int main() {
-    int didx,didy;
+    int didx, didy;
     srand(time(0));
     int n, m;
     scanf("%d %d", &n, &m);
@@ -134,6 +268,7 @@ int main() {
 //            didx=xpolis[kolp]-xt;
 //            didy=ypolis[kolp-yt];
 
+
             xpolis[kolp] = rand() % n;
             ypolis[kolp] = rand() % m;
             x = xpolis[kolp];
@@ -174,8 +309,8 @@ int main() {
         arr[xt][yt] = 0;
         xt = chek(xt, xt1);
         yt = chek(yt, yt1);
-        xt=chek1(xt,n);
-        yt=chek1(yt,m);
+        xt = chek1(xt, n);
+        yt = chek1(yt, m);
 //        while (xt >= n) {
 ////            printf("xhi");
 //            xt -= 1;
@@ -213,6 +348,9 @@ int main() {
         for (counter = 0; counter < kalantari; counter++) {
             for (counter1 = 0; counter1 < kalantar[counter]; counter1++) {
 //               sleep(1);
+                if((xpolis[kolp]-xt)<=2&&ypolis[kolp]-yt)<=2||){
+                }
+                else{
                 xpolis1 = rand() % 3;
                 ypolis1 = rand() % 3;
 //                printf("%d %d sara0\n",x,y);
@@ -220,8 +358,8 @@ int main() {
                 arr[xpolis[kolp]][ypolis[kolp]] = 0;
                 xpolis[kolp] = chek(xpolis[kolp], xpolis1);
                 ypolis[kolp] = chek(ypolis[kolp], ypolis1);
-                xpolis[kolp]=chek1(xpolis[kolp],n);
-                ypolis[kolp]=chek1(ypolis[kolp],m);
+                xpolis[kolp] = chek1(xpolis[kolp], n);
+                ypolis[kolp] = chek1(ypolis[kolp], m);
 //                while (xpolis[kolp] >= n) {
 //                    xpolis[kolp] -= 1;
 ////                    ypolis[kolp] -=1;
@@ -245,14 +383,14 @@ int main() {
 //                    chap(n, m, arr);
 //                    return 0;
 //                }
-                while (arr[x][y] >0) {
+                while (arr[x][y] > 0) {
 //                    sleep(1);
                     xpolis1 = rand() % 3;
                     ypolis1 = rand() % 3;
                     xpolis[kolp] = chek(xpolis[kolp], xpolis1);
                     ypolis[kolp] = chek(ypolis[kolp], ypolis1);
-                    xpolis[kolp]=chek1(xpolis[kolp],n);
-                    ypolis[kolp]=chek1(ypolis[kolp],m);
+                    xpolis[kolp] = chek1(xpolis[kolp], n);
+                    ypolis[kolp] = chek1(ypolis[kolp], m);
 //                    while (xpolis[kolp] >= n) {/*
 //                        xpolis[kolp] -= 1;
 ////                    ypolis[kolp] -=1;
@@ -288,6 +426,7 @@ int main() {
                 kolp++;
             }
         }
+
 //        _sleep(1);
         chap(n, m, arr);
         printf("\n");
@@ -295,6 +434,6 @@ int main() {
         printf("time is %d\n", time1);
     }
 
-    }
+
     return 0;
 }
